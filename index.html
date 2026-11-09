@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Beauty Salon | Kasir</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand-mark">✿</div>
+    <div>
+        <h1>Glow Beauty Salon</h1>
+        <p>Sistem Kasir Salon Kecantikan</p>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="intro">
+        <div>
+            <p class="eyebrow">SELAMAT DATANG</p>
+            <h2>Transaksi Pelanggan</h2>
+            <p class="muted">
+                Pilih layanan, atur diskon, lalu selesaikan pembayaran.
+            </p>
+        </div>
+        <div class="date-chip" id="todayLabel">Kasir Salon</div>
+    </section>
+
+    <div class="layout">
+
+        <!-- DAFTAR LAYANAN -->
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">MENU LAYANAN</p>
+                    <h2>Pilih Layanan</h2>
+                </div>
+            </div>
+
+            <div id="serviceList" class="service-list"></div>
+        </section>
+
+        <!-- TRANSAKSI -->
+        <section class="panel transaction-panel">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">RINCIAN TRANSAKSI</p>
+                    <h2>Daftar Pesanan</h2>
+                </div>
+
+                <button type="button" class="text-button" id="clearOrderBtn">
+                    Hapus Pesanan
+                </button>
+            </div>
+
+            <label class="field-label" for="customerName">
+                Nama Pelanggan
+            </label>
+
+            <input
+                id="customerName"
+                class="field"
+                type="text"
+                placeholder="Masukkan nama pelanggan"
+                maxlength="60"
+            >
+
+            <div id="orderList" class="order-list">
+                <p class="empty-state">
+                    Belum ada layanan yang dipilih.
+                </p>
+            </div>
+
+            <div class="discount-row">
+                <label class="field-label" for="discount">
+                    Diskon (%)
+                </label>
+
+                <input
+                    id="discount"
+                    class="field"
+                    type="number"
+                    min="0"
+                    max="100"
+                    step="1"
+                    value="0"
+                >
+            </div>
+
+            <!-- TOTAL PEMBAYARAN -->
+            <div class="totals">
+
+                <div>
+                    <span>Subtotal</span>
+                    <strong id="subtotal">Rp0</strong>
+                </div>
+
+                <div>
+                    <span>Potongan Diskon</span>
+                    <strong id="discountAmount">Rp0</strong>
+                </div>
+
+                <div class="grand-total">
+                    <span>Total Bayar</span>
+                    <strong id="total">Rp0</strong>
+                </div>
+
+            </div>
+
+            <!-- PEMBAYARAN -->
+            <div class="payment-area">
+
+                <label class="field-label" for="cashReceived">
+                    Uang Diterima dari Customer (Rp)
+                </label>
+
+                <input
+                    id="cashReceived"
+                    class="field"
+                    type="text"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    placeholder="Contoh: 150000"
+                >
+
+                <p class="helper">
+                    Boleh menggunakan titik atau tanpa titik.
+                    Contoh: 150.000
+                </p>
+
+                <div class="change-box">
+                    <span>Uang Kembalian</span>
+                    <strong id="change">Rp0</strong>
+                </div>
+
+                <p id="paymentMessage" class="payment-message">
+                    Silakan pilih layanan terlebih dahulu.
+                </p>
+
+            </div>
+
+            <!-- TOMBOL -->
+            <div class="actions">
+
+                <button
+                    type="button"
+                    class="btn btn-light"
+                    id="resetBtn">
+                    Reset
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="checkoutBtn"
+                    disabled>
+                    Bayar &amp; Download Struk
+                </button>
+
+            </div>
+
+        </section>
+    </div>
+</main>
+
+<footer>
+    © 2026 Glow Beauty Salon · Terima kasih telah berkunjung ♡
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
